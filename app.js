@@ -47,7 +47,7 @@ app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://www.linkpicture.com/"],
+    origin: [process.env.FRONTEND_URL, "https://www.linkpicture.com/"],
     credentials: true,
   })
 );
