@@ -28,7 +28,7 @@ const setOrder = async (req, res) => {
       if (resArray.length === 0) {
         resArray.push([`Polska, Słupsk - ${arrayOfRange[country][0]}, ${arrayOfRange[country][city]}`]);
         const newOrder = new Order({
-          way: `Polska, Łódź - ${arrayOfRange[country][0]}, ${arrayOfRange[country][city]}`,
+          way: `Polska, Słupsk - ${arrayOfRange[country][0]}, ${arrayOfRange[country][city]}`,
           userID: req.user._id,
         });
         await newOrder.save();
