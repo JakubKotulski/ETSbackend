@@ -35,7 +35,7 @@ const { setInsurance } = require("./node/actions/setInsurance");
 const { setTechnicalReview } = require("./node/actions/setTechnicalReview.js");
 
 mongoose.set("strictQuery", true);
-mongoose.connect("mongodb+srv://praktyki:praktyki2021@development.wtktz.mongodb.net/ETS", {
+mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
