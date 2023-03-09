@@ -132,3 +132,5 @@ app.put("/admin/repair", acceptRepair);
 app.listen(4000, () => {
   console.log("Server has started");
 });
+
+module.exports = app;
