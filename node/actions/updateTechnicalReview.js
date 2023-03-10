@@ -13,6 +13,8 @@ const updateTechnicalReview = async (req, res) => {
       }
     );
     await User.updateOne({ username: "Hamdam" }, { $inc: { companyBalance: -2500 } });
+    return res.status(200).send("Updated")
+
   } catch (err) {
     console.log(err);
   }
