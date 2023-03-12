@@ -17,6 +17,8 @@ const sumOrder = async (req, res) => {
           distance: distance,
           startState: req.body.startState,
           endState: req.body.endState,
+          startStateEmpty: req.body.startStateEmpty,
+          endStateEmpty: req.body.endStateEmpty,
           boughtFuel: req.body.fuelAmount,
           fuelPrice: req.body.fuelPrice,
           wasteTrailer: req.body.semiTrailerDamage,

@@ -26,9 +26,9 @@ const setOrder = async (req, res) => {
       }
 
       if (resArray.length === 0) {
-        resArray.push([`Polska, Słupsk - ${arrayOfRange[country][0]}, ${arrayOfRange[country][city]}`]);
+        resArray.push([`POLSKA, Słupsk - ${arrayOfRange[country][0]}, ${arrayOfRange[country][city]}`]);
         const newOrder = new Order({
-          way: `Polska, Słupsk - ${arrayOfRange[country][0]}, ${arrayOfRange[country][city]}`,
+          way: `POLSKA, Słupsk - ${arrayOfRange[country][0]}, ${arrayOfRange[country][city]}`,
           userID: req.user._id,
         });
         await newOrder.save();
@@ -45,7 +45,7 @@ const setOrder = async (req, res) => {
 
     resArray = req.body.countries;
     const newOrder = new Order({
-      way: `${lastCords} - Polska, Słupsk`,
+      way: `${lastCords} - POLSKA, Słupsk`,
       userID: req.user._id,
     });
     await newOrder.save();

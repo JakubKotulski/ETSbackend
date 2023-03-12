@@ -4,6 +4,8 @@ const User = require("./User");
 const order = new mongoose.Schema({
   startState: {type: Number, default: 0},
   endState: {type: Number, default: 0},
+  startStateEmpty: {type: Number, default: 0},
+  endStateEmpty: {type: Number, default: 0},
   distance: { type: Number, default: 0 },
   fuelPrice: {type: Number, default: 0},
   boughtFuel : {type: Number, default: 0},
