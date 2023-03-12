@@ -33,6 +33,8 @@ const { changeCompanyBalance } = require("./node/actions/changeCompanyBalance");
 const { acceptRepair } = require("./node/actions/acceptRepair");
 const { setInsurance } = require("./node/actions/setInsurance");
 const { setTechnicalReview } = require("./node/actions/setTechnicalReview.js");
+const { getWash } = require("./node/actions/getWash");
+const { acceptWash } = require("./node/actions/acceptWash");
 
 mongoose.set("strictQuery", true);
 mongoose.connect(process.env.MONGO_URL, {
@@ -118,6 +120,9 @@ app.get("/order/me/rejected", auth, getMyRejectedOrders);
 app.put("/order/accept", acceptOrder);
 app.put("/order/reject", rejectOrder);
 app.post("/order/create", auth, setOrder);
+
+app.get("/me/wash", auth, getWash);
+app.put("/me/wash", auth, acceptWash);
 
 app.get("/users", getUsers);
 app.put("/me/waste", auth, setWaste);
