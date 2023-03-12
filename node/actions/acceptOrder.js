@@ -29,6 +29,8 @@ const acceptOrder = async (req, res) => {
 
     const avarageFuelConsumption = (fuelConsumption / distanceToSet) * 100;
 
+    await User.updateOne({ username: "Hamdam" }, { $inc: { companyBalance: Math.floor(req.body.distance * 0.3) } });
+
     await User.updateOne(
       { _id: req.body.userID },
       {
