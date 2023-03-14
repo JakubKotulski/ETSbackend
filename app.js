@@ -35,6 +35,7 @@ const { setInsurance } = require("./node/actions/setInsurance");
 const { setTechnicalReview } = require("./node/actions/setTechnicalReview.js");
 const { getWash } = require("./node/actions/getWash");
 const { acceptWash } = require("./node/actions/acceptWash");
+const { getUser } = require("./node/actions/getSingleUser");
 
 mongoose.set("strictQuery", true);
 mongoose.connect(process.env.MONGO_URL, {
@@ -125,6 +126,7 @@ app.get("/me/wash", auth, getWash);
 app.put("/me/wash", auth, acceptWash);
 
 app.get("/users", getUsers);
+app.post("/userOne", getUser);
 app.put("/me/waste", auth, setWaste);
 app.put("/me/insurance", auth, updateInsurance);
 app.put("/me/insuranceEnd", auth, setInsurance);
