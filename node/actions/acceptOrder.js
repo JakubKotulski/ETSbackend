@@ -43,6 +43,8 @@ const acceptOrder = async (req, res) => {
       }
     );
 
+    await User.updateOne({ _id: req.body.userID }, { $inc: { monthDistance: req.body.distance } });
+
     return res.status(200).send("Accepted");
   } catch (err) {
     console.log(err);

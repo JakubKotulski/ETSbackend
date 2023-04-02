@@ -1,7 +1,5 @@
 const jwt = require("jsonwebtoken");
 const User = require("../models/User")
-const { findOne } = require("../models/User");
-
 const config = process.env;
 
 const verifyToken = async (req, res, next) => {

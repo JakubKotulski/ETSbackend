@@ -18,5 +18,7 @@ const user = new mongoose.Schema({
   technicalReviewDay: { type: Number },
   insuranceMonth: { type: Number },
   insuranceDay: { type: Number },
+  monthDistance: { type: Number, default: 0 },
+  monthDinstaneReset: { type: Number },
 });
 module.exports = mongoose.model("User", user);

@@ -14,11 +14,7 @@ const bcrypt = require("bcryptjs");
 const User = require("./node/models/User");
 const auth = require("./node/middleware/verifyToken");
 
-const { addUser } = require("./node/actions/addUser");
 const { getUsers } = require("./node/actions/getUsers");
-const { signIn } = require("./node/actions/signIn");
-const { getLoggedUser } = require("./node/actions/getLoggedUser");
-const { logOut } = require("./node/actions/logOut");
 const { sumOrder } = require("./node/actions/sumOrder");
 const { getOrders } = require("./node/actions/getOrders");
 const { acceptOrder } = require("./node/actions/acceptOrder");
@@ -37,6 +33,7 @@ const { getWash } = require("./node/actions/getWash");
 const { acceptWash } = require("./node/actions/acceptWash");
 const { getUser } = require("./node/actions/getSingleUser");
 const { deleteUser } = require("./node/actions/deleteUser");
+const { resetMonthDistance } = require("./node/actions/resetMonthDistance");
 
 mongoose.set("strictQuery", true);
 mongoose.connect(process.env.MONGO_URL, {
@@ -134,6 +131,7 @@ app.put("/me/insurance", auth, updateInsurance);
 app.put("/me/insuranceEnd", auth, setInsurance);
 app.put("/me/technicalReview", auth, updateTechnicalReview);
 app.put("/me/technicalReviewEnd", auth, setTechnicalReview);
+app.put("/me/monthDistance", auth, resetMonthDistance);
 
 app.put("/admin/balance", changeCompanyBalance);
 app.put("/admin/repair", acceptRepair);
